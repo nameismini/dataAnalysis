@@ -5,6 +5,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyDocumentationSettings">
+    <option name="renderExternalDocumentation" value="true" />
+  </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="d5d4faf9-b269-4ccf-bdd1-49ece4f9baf7" />
   </component>
