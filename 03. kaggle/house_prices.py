@@ -21,7 +21,7 @@ api.authenticate()
 import pandas as pd
 
 
-dataset = pd.read_csv("data/house-prices/train.csv")
+dataset = pd.read_csv("../data/house-prices/train.csv")
 
 
 print(dataset)
