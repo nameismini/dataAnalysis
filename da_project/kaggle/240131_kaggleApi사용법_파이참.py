@@ -9,8 +9,8 @@ import kaggle as kaggle
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 # 닉네임, 토큰 설정
-os.environ["KAGGLE_USERNAME"] = 'ㅇㅇㅇㅇddd'
-os.environ["KAGGLE_KEY"] = "ㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
+os.environ["KAGGLE_USERNAME"] = 'mkim80'
+os.environ["KAGGLE_KEY"] = "3cab95f0e83be84d5932ff809d4241fb"
 
 api = KaggleApi()
 api.authenticate()

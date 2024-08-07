@@ -40,7 +40,6 @@ plt.xlabel("첫 번째 특성")
 plt.ylabel("두 번째 특성")
 plt.show()
 
-
 # %% 문법 참고
 
 # test용 X, y 는 X, y = mglearn.datasets.make_forge()
@@ -58,18 +57,17 @@ plt.show()
 # idx = np.where(test_data[:, 1] == 1)
 
 
-
 # %% mglearn 말고 그냥 자료 만들어 보기
 
 X, y = mglearn.datasets.make_forge()
-yy = y.reshape([-1,1])
-data = np.concatenate((X,yy),axis=1)
+yy = y.reshape([-1, 1])
+data = np.concatenate((X, yy), axis=1)
 
-plt.scatter(data[data[:,2] == 0, 0], data[data[:,2] == 0, 1], marker='^')
-plt.scatter(data[data[:,2] == 1, 0], data[data[:,2] == 1, 1], marker='o')
+plt.scatter(data[data[:, 2] == 0, 0], data[data[:, 2] == 0, 1], marker='^')
+plt.scatter(data[data[:, 2] == 1, 0], data[data[:, 2] == 1, 1], marker='o')
 plt.show()
 
-#%% make_wave dataset 으로 테스트
+# %% make_wave dataset 으로 테스트
 X, y = mglearn.datasets.make_wave()
 
 # plt.figure(figsize=(10,6)): 그래프 크기를 가로10, 세로 6으로 지정
@@ -78,28 +76,73 @@ X, y = mglearn.datasets.make_wave()
 # plt.ylabel: y축 라벨링
 # plt.show(): terminal에 그래프를 표시
 
-plt.figure(figsize=(10,6))
+plt.figure(figsize=(10, 6))
 # scatter 비하여 속도는 빠르나 기능이 작음 marker='o'으로 산점도 가능
-plt.plot(X,y,'o')
+plt.plot(X, y, 'o')
 # scatter 방법은 크기, 색상 등에 사용자 정의할 수 있어 훨씬 자유로움
 plt.scatter(X, y)
 plt.show()
 
-#%% 위스콘신 유방암 데이터셋 - cancer
+# %% 위스콘신 유방암 데이터셋 - cancer
 
 from sklearn.datasets import load_breast_cancer
+
 cancer = load_breast_cancer()
 print(cancer.keys())
-# dict_keys(['data', 'target', 'frame', 'target_names', 'DESCR', 'feature_names', 'filename', 'data_module'])
 
 result = {n: v for n, v in zip(cancer.target_names, np.bincount(cancer.target))}
-result
+print(result)
+print(cancer.feature_names)
 
-cancer.keys()
+# mglearn.plots.plot_knn_classification(n_neighbors=1)
 
-cancer.feature_names
+# plt.scatter()
 
-mglearn.plots.plot_knn_classification(n_neighbors=1)
+# plt.show()
+
+# %% 보스턴 주택가격 데이터셋
+
+# from sklearn.datasets import load_boston
+
+import pandas as pd
+import numpy as np
+
+data_url = "http://lib.stat.cmu.edu/datasets/boston"
+raw_df = pd.read_csv(data_url, sep="\s+", skiprows=22, header=None)
+data = np.hstack([raw_df.values[::2, :], raw_df.values[1::2, :2]])
+target = raw_df.values[1::2, 2]
+
+# test1 = raw_df.values[::2, :]
+# test2 = raw_df.values[1::2, :2]
+
+
+# %% K-NN k-최근접 이웃 분류
+
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+
+X, y = mglearn.datasets.make_forge()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+clf = KNeighborsClassifier(n_neighbors=3)
+
+# 학습
+clf.fit(X_train, y_train)
+
+# 예측
+print("데이터 세트 예측 : ", clf.predict(X_test))
+print("테스트 세트 정확도{:.2f}".format(clf.score(X_test, y_test)))
+
+#%% 결정경계 나누기
+
+fig, axes = plt.subplots(1, 3, figsize=(10,3))
+
+
+for n_neighbors, ax in zip([1,3,9], axes):
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap='winter')
+    # mglearn.plots.plot_2d_separator(clf, X, fill=True, eps=0.5, ax=ax, alpha=.4)
+    # ax.set_xticks(())
+    # ax.set_yticks(())
+
 plt.show()
-
 

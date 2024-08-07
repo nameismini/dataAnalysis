@@ -1,9 +1,19 @@
 
-`
-0resources/240130_kaggleApi사용법_코랩.ipynb,b\2\b288fd80f020e0e79329bf3e593db8e210bc37f6
-J
-03. kaggle/house_prices.py,3\5\35601fa44251e1b8ed07cf152ee4b3db45c281f1
-G
-01. work/csr_info.ipynb,8\c\8cb3b8f50a5a6c85cafa4982e40464c03a1b283b
-`
-0resources/240131_kaggleApi사용법_파이참.py,5\b\5bd4e06fc5f148c67b38f90d8f3bc17e1d8a0634
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+{
+Kdata/heart-failure-clinical-data/heart_failure_clinical_records_dataset.csv,b\a\baeffed0d403135f63a759a41134f5d35683ae11
+U
+%da_project/kaggle/heart_failure.ipynb,8\6\86c244d2a111265a87325d8d9e7f12f01a272ec5
+E
+resources/kaggle.json,4\f\4fbb7a3fe2528b52248d8a90ce1722c028e12a04
+F
+da_project/__init__.py,9\c\9cbd941d15488b80361110113feb40aec7378d68
+7
+main.py,f\1\f1bdda93d9a278e358509d498e17d97764c1fb29
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+I
+da_project/work/config.py,0\5\05982c5101035e6bd26a4a004f2cd6e228a19373
