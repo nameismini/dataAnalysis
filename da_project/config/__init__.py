@@ -10,7 +10,7 @@ import os
 
 # 현재 파일 위치 확인
 current_directory = os.path.dirname(__file__)
-print(f"Current directory: {current_directory}")
+# print(f"Current directory: {current_directory}")
 
 # 상위 디렉터리로 이동 후 'config' 디렉터리 경로를 설정
 config_directory = os.path.abspath(os.path.join(current_directory, '..', 'config'))

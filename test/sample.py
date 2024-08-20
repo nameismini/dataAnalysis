@@ -75,3 +75,23 @@ a['c'] = 3
 a['b']
 
 a.items()
+
+
+
+'''
+# 데이터 타입 확인
+print("발생일자 데이터 타입:", result_df['발생일자'].dtype)
+print("날짜 데이터 타입:", df_expanded['날짜'].dtype)
+
+# 데이터 값 확인
+print("result_df:")
+print(result_df[['발생일자', '이름']].drop_duplicates())
+print("df_expanded:")
+print(df_expanded[['날짜', '대상자']].drop_duplicates())
+
+# 결측값 및 중복값 확인
+print('result_df.isna().sum() : ',result_df.isna().sum())
+print('df_expanded.isna().sum() : ',df_expanded.isna().sum())
+print('result_df.duplicated().sum() : ',result_df.duplicated().sum())
+print('df_expanded.duplicated().sum() : ',df_expanded.duplicated().sum())
+'''

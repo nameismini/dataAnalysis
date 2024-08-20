@@ -15,6 +15,7 @@ load_dotenv()
 # 전역변수 설정
 MFT_NOTION_API_KEY = os.getenv('MFT_NOTION_API_KEY')
 NTDB_ATTENDANCE = os.getenv('NTDB_ATTENDANCE')
+NTDB_DAILYCHECK = os.getenv('NTDB_DAILYCHECK')
 DATABASE_URL = os.getenv('DATABASE_URL')
 DEBUG = os.getenv('DEBUG') == 'True'  # 문자열을 Boolean으로 변환
 PORT = int(os.getenv('PORT', 5000))  # 기본값을 설정
