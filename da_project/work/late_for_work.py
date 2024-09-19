@@ -25,7 +25,7 @@ import holidays
 # 엑셀 파일 읽기 (인사팀 매월 초)
 # ------------------------------------------
 
-file_path = '../../data/제조서비스팀 사무실 출입자료(6,7월).xls'
+file_path = '../../data/제조서비스팀 출입내역_8월.xls'
 df = pd.read_excel(file_path)
 
 # 컬럼 이름 변경
@@ -151,7 +151,7 @@ def get_start_time(row):
     elif (row['근태구분'] == '오전반차' or row['근태구분'] == '민방위오전'):
         return timedelta(hours=13, minutes=30)  # 연차일 경우 출근시간 08:00
     elif row['일일점검자'] == 'O':
-        return timedelta(hours=13, minutes=30)  # 연차일 경우 출근시간 08:00
+        return timedelta(hours=8, minutes=00)  # 연차일 경우 출근시간 08:00
     else:
         return timedelta(hours=8, minutes=30)  # 일반일 경우 출근시간 08:30
 
