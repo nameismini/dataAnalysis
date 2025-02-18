@@ -25,7 +25,7 @@ import holidays
 # 엑셀 파일 읽기 (인사팀 매월 초)
 # ------------------------------------------
 
-file_path = '../../data/제조서비스팀 출입내역_8월.xls'
+file_path = '../../data/제조서비스팀_0월.xls'
 df = pd.read_excel(file_path)
 
 # 컬럼 이름 변경
